@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: Dikshant Mali
+@author: Dhruv Sevak
 """
 
 import streamlit as st 
@@ -13,9 +13,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-model = pickle.load(open('randomforest.pkl', 'rb')) 
+model = pickle.load(open('PCA_decision_model.pkl', 'rb')) 
 # Feature Scaling
-dataset = pd.read_csv('Classification Dataset3.csv')
+dataset = pd.read_csv('PCA and NN Dataset33.csv')
 # Extracting independent variable:
 dataset['sd'] = dataset['sd'].fillna(dataset['sd'].mean())
 dataset['median'] = dataset['median'].fillna(dataset['median'].mean())
@@ -59,7 +59,7 @@ def main():
    <div class="" style="background-color:#fa8072" >
    <div class="clearfix">           
    <div class="col-lg-12">
-   <center><p style="font-size:40px;color:black;margin-top:10px;">Midterm 1(Dikshant Mali)</p></center> 
+   <center><p style="font-size:40px;color:black;margin-top:10px;">Dhruv Sevak end term)</p></center> 
    <center><p style="font-size:30px;color:black;margin-top:10px;">Department of Computer Engineering PIET,Jaipur</p></center> 
    <center><p style="font-size:25px;color:black;margin-top:10px;"Machine Learning Lab </p></center> 
    </div>
@@ -67,7 +67,7 @@ def main():
    </div>
    """
     st.markdown(html_temp,unsafe_allow_html=True)
-    st.header("Random Forest Classification")
+    st.header("Decision tree for pca")
     meanfreq = st.number_input("Enter The meanfreq value",0,1)
     sd = st.number_input("Enter The sd value",0,1)
     median = st.number_input("Enter The median value",0,1)
@@ -82,7 +82,7 @@ def main():
       st.success('{} '.format(result))
       
     if st.button("About"):
-      st.subheader("Developed by Dikshant Mali")
+      st.subheader("Developed by Dhruv Sevak")
       st.subheader("Student , Poornima Institute Of Engineering And Technology")
 
 if __name__=='__main__':
